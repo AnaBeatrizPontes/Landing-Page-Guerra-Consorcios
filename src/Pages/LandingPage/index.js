@@ -6,7 +6,6 @@ import NavBar from "../../Components/NavBar";
 import ModelsArea from "../../Components/Models";
 import AccessoriesArea from "../../Components/Accessories";
 import BrandsArea from "../../Components/Brands";
-import FirstBackGrourndImage from "../../Components/First";
 
 //Material UI (Styles)
 import { makeStyles } from "@material-ui/core/styles";
@@ -30,9 +29,6 @@ export default function LandingPage() {
     <div className={classes.page}>
       <Box id="start">
         <NavBar />
-      </Box>
-      <Box id="began">
-        <FirstBackGrourndImage />
       </Box>
       <Box id="models">
         <ModelsArea />

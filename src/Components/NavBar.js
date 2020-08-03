@@ -14,6 +14,7 @@ const Style = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     height: "15vh",
+    backgroundImage: "linear-gradient(180deg,  #275673 0%,  #1D2C40 100%)",
   },
   divMenuLogo: {
     width: "13%",
@@ -38,7 +39,7 @@ const Style = makeStyles((theme) => ({
     display: "block",
     fontSize: "2em",
     fontWeight: "bold",
-    color: "#000000",
+    color: "#FFFF",
   },
   divMenu: {
     display: "flex",
@@ -56,7 +57,7 @@ export default function NavBar() {
   return (
     <AppBar
       position="fixed"
-      style={{ background: "transparent", boxShadow: "none" }}
+      style={{ boxShadow: "none" }}
       className={classes.appBar}
     >
       <div className={classes.divMenuList}>
