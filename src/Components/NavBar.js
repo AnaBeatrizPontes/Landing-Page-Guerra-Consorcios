@@ -6,7 +6,6 @@ import LogoWhite from "../Assets/logo-vert-white.png";
 
 //Material UI (Styles)
 import { makeStyles } from "@material-ui/core/styles";
-import { fade } from "@material-ui/core/styles/colorManipulator";
 import AppBar from "@material-ui/core/AppBar";
 import { MenuItem, ListItemIcon } from "@material-ui/core";
 
@@ -14,20 +13,21 @@ const Style = makeStyles((theme) => ({
   appBar: {
     display: "flex",
     flexDirection: "row",
-    height: "10vh",
+    height: "15vh",
   },
   divMenuLogo: {
     width: "13%",
     height: "9vh",
+    alignSelf: "center",
   },
   divMenuList: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: "3em",
-    marginRight: "15em",
-    color: fade("#FFFCF2", 1),
+    fontSize: "3em",
+    marginLeft: "1em",
+    marginRight: "6em",
   },
   imgProps: {
     height: "9vh",
@@ -35,13 +35,18 @@ const Style = makeStyles((theme) => ({
   },
   linkprops: {
     textDecoration: "none",
-    color: fade("#FFFCF2", 1),
+    display: "block",
+    fontSize: "2em",
+    fontWeight: "bold",
+    color: "#000000",
   },
   divMenu: {
     display: "flex",
+    fontWeight: "bold",
+    flexDirection: "row",
+    justifyContent: "flex-end",
     alignItems: "center",
     marginLeft: "35em",
-    color: fade("#FFFCF2", 1),
   },
 }));
 
@@ -56,16 +61,13 @@ export default function NavBar() {
     >
       <div className={classes.divMenuList}>
         <HLink smooth to="/#models" className={classes.linkprops}>
-          <MenuItem> Modelos </MenuItem>
-        </HLink>
-        <HLink smooth to="/#accessories" className={classes.linkprops}>
-          <MenuItem> Acessórios </MenuItem>
+          <MenuItem> MODELOS </MenuItem>
         </HLink>
         <HLink smooth to="/#brands" className={classes.linkprops}>
-          <MenuItem> Marcas </MenuItem>
+          <MenuItem> MARCAS </MenuItem>
         </HLink>
-        <HLink smooth to="/#contact" className={classes.linkprops}>
-          <MenuItem> Contato </MenuItem>
+        <HLink smooth to="/#accessories" className={classes.linkprops}>
+          <MenuItem> ACESSÓRIOS </MenuItem>
         </HLink>
       </div>
       <div className={classes.divMenuLogo}>
@@ -82,7 +84,9 @@ export default function NavBar() {
         </HLink>
       </div>
       <div className={classes.divMenu}>
-        <MenuItem> Comprar </MenuItem>
+        <HLink smooth to="#contact" className={classes.linkprops}>
+          <MenuItem> CONTATO </MenuItem>
+        </HLink>
       </div>
     </AppBar>
   );

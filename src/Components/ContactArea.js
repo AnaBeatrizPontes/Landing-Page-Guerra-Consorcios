@@ -9,37 +9,68 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import NaturePeopleIcon from "@material-ui/icons/NaturePeople";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 const Style = makeStyles({
   contatcArea: {
+    marginTop: "3em",
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     alignItems: "center",
     width: "100%",
-    height: "100vh",
-    backgroundImage: "linear-gradient(180deg, #252422 0%, #403D39 100%)",
+    height: "70vh",
+    backgroundImage: "linear-gradient(180deg,  #1D2C40 0%,  #275673 100%)",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "top 20rem right 0",
   },
   align: {
+    width: "40%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    marginTop: "10em",
+  },
+  part1: {
+    width: "60%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  smallTitles: {
+    color: "#FFFCF2",
+    fontSize: "1.5em",
+  },
+  part2: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    marginTop: "2em",
+    marginBottom: "5em",
+  },
+  icons: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  hLine: {
+    border: "none",
+    height: "40vh",
+    width: "1px",
+    backgroundColor: "#c9c0c6",
   },
   contactTitle: {
-    color: fade("#403D39", 1),
+    color: "#FFFCF2",
     fontSize: "2em",
     fontWeight: "bold",
-    marginBottom: "2em",
+    marginTop: "2em",
+    marginBottom: "1em",
   },
   textField: {
     display: "flex",
     justifyContent: "center",
     borderRadius: "16px",
     fontSize: "1.2em",
-    width: "40vw",
+    width: "35vw",
     height: "22vh",
     transition: "0.4s",
     "&:hover": {
@@ -52,14 +83,13 @@ const Style = makeStyles({
   },
   informationField: {
     display: "flex",
-    justifyContent: "center",
     borderRadius: "16px",
     transition: "0.4s",
     "&:hover": {
       transition: "0.4s",
     },
     fontSize: "1.2em",
-    width: "40vw",
+    width: "35vw",
     height: "7vh",
     resize: "none",
     border: "none",
@@ -68,14 +98,15 @@ const Style = makeStyles({
   },
   sendButton: {
     display: "grid",
-    backgroundColor: fade("#EB5E28", 1),
+    backgroundColor: "#FFFCF2",
     borderRadius: "40px",
-    color: "#FFFCF2",
+    color: "#275673",
+    fontWeight: "bold",
     fontSize: "1em",
     padding: "0.5rem 3rem",
     transition: "0.4s",
     "&:hover": {
-      backgroundColor: fade("#EB5E28", 1),
+      backgroundColor: fade("#FFFCF2", 1),
       transition: "0.4s",
     },
   },
@@ -92,8 +123,30 @@ const Style = makeStyles({
     width: "45%",
   },
   iconProp: {
+    width: "35%",
+    height: "20vh",
+  },
+  socialIconProp: {
     width: "6%",
     height: "6vh",
+  },
+  froms: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  sideToSide: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  infos: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    color: "#FFFCF2",
+    fontSize: "1em",
+    marginTop: "2em",
   },
 });
 
@@ -102,8 +155,64 @@ export default function ContactArea() {
 
   return (
     <div className={classes.contatcArea}>
+      <div className={classes.part1}>
+        <div className={classes.part2}>
+          <div className={classes.sideToSide}>
+            <div className={classes.froms}>
+              <div className={classes.smallTitles}>Concessionárias</div>
+              <NaturePeopleIcon
+                className={classes.iconProp}
+                style={{ color: "white" }}
+              />
+            </div>
+            <div className={classes.froms}>
+              <div className={classes.smallTitles}>Cadastre-se</div>
+              <AccountCircleIcon
+                className={classes.iconProp}
+                style={{ color: "white" }}
+              />
+            </div>
+            <div className={classes.froms}>
+              <div className={classes.smallTitles}>Comprar</div>
+              <AddShoppingCartIcon
+                className={classes.iconProp}
+                style={{ color: "white" }}
+              />
+            </div>
+          </div>
+          <div className={classes.infos}>
+            <div className={classes.info}>Política de Privacidade</div>
+            <div className={classes.info}>Termos de uso</div>
+            <div className={classes.info}>Informação ao consumidor</div>
+            <div className={classes.info}>Código de Conduta</div>
+          </div>
+        </div>
+        <div className={classes.icons}>
+          <FacebookIcon
+            className={classes.socialIconProp}
+            style={{ color: "white" }}
+          />
+          <LinkedInIcon
+            className={classes.socialIconProp}
+            style={{ color: "white" }}
+          />
+          <InstagramIcon
+            className={classes.socialIconProp}
+            style={{ color: "white" }}
+          />
+          <YouTubeIcon
+            className={classes.socialIconProp}
+            style={{ color: "white" }}
+          />
+          <TwitterIcon
+            className={classes.socialIconProp}
+            style={{ color: "white" }}
+          />
+        </div>
+      </div>
+      <div className={classes.hLine} />
       <div className={classes.align}>
-        <div className={classes.contactTitle}>Dúvidas? Entre em contato</div>
+        <div className={classes.contactTitle}>Fale Conosco</div>
         <textarea
           className={classes.textField}
           placeholder="Mensagem..."
@@ -118,13 +227,6 @@ export default function ContactArea() {
               {" "}
               ENVIAR{" "}
             </Button>
-          </div>
-          <div className={classes.icons}>
-            <FacebookIcon className={classes.iconProp} />
-            <LinkedInIcon className={classes.iconProp} />
-            <InstagramIcon className={classes.iconProp} />
-            <YouTubeIcon className={classes.iconProp} />
-            <TwitterIcon className={classes.iconProp} />
           </div>
         </div>
       </div>

@@ -18,6 +18,8 @@ const Style = makeStyles({
     width: "100%",
     height: "100vh",
     backgroundColor: fade("#FFFFFF", 1),
+    display: "flex",
+    flexDirection: "column",
   },
 });
 
@@ -29,17 +31,17 @@ export default function LandingPage() {
       <Box id="start">
         <NavBar />
       </Box>
-      <Box>
+      <Box id="began">
         <FirstBackGrourndImage />
       </Box>
       <Box id="models">
         <ModelsArea />
       </Box>
-      <Box id="accessories">
-        <AccessoriesArea />
-      </Box>
       <Box id="brands">
         <BrandsArea />
+      </Box>
+      <Box id="accessories">
+        <AccessoriesArea />
       </Box>
       <Box id="contact">
         <ContactArea />

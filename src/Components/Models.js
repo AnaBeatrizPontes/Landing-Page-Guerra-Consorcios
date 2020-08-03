@@ -1,165 +1,353 @@
-import React, { useState } from "react";
-
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
+import React from "react";
 
 //Assets
-import Lambor1 from "../Assets/lamborghini.png";
-import Lambor2 from "../Assets/lamborghiniFromUp.png";
-import Lambor3 from "../Assets/lamborghinis.png";
-import Lambor4 from "../Assets/lamborghiniWithe.png";
+import TeslaModelS from "../Assets/TeslaModelS.jpeg";
+import TeslaModelX from "../Assets/TeslaModelX.jpg";
+import TeslaModel3 from "../Assets/TeslaModel3_.jpg";
+import AudiA3 from "../Assets/AudiA3.jpg";
+import AudiA4 from "../Assets/AudiA4.jpg";
+import AudiA7 from "../Assets/AudiA7.jpg";
+import BMW530 from "../Assets/BMW530.jpg";
+import BMWHibri from "../Assets/BMWHibri.jpg";
+import BMWM2 from "../Assets/BMWM2.jpg";
 
 //Material UI (Styles)
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, Button } from "@material-ui/core";
+import { Box } from "@material-ui/core";
+import AirlineSeatReclineNormalIcon from "@material-ui/icons/AirlineSeatReclineNormal";
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import StarIcon from "@material-ui/icons/Star";
+import AdjustIcon from "@material-ui/icons/Adjust";
 
 const Style = makeStyles({
   all: {
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    marginTop: "5em",
-    width: "100%",
-    height: "vh",
-  },
-  boxArea: {
-    width: "95%",
-    height: "55vh",
-    display: "flex",
+    flexDirection: "column",
     alignSelf: "center",
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center",
-    backgroundImage: "linear-gradient(180deg, #252422 50%, #403D39 50%)",
-    transition: "0.4s",
-    "&:hover": {
-      transition: "0.4s",
-    },
-    boxShadow: "0px 3px 6px #00000029",
-  },
-  slidesArea: {
-    width: "30%",
-    height: "50vh",
-  },
-  img: {
-    height: "50vh",
-    display: "block",
-    overflow: "hidden",
+    marginTop: "3em",
+    backgroundColor: "#FFFFFF",
     width: "100%",
   },
-  textBox: {
-    display: "flex",
-    width: "30%",
-    alignItems: "center",
-    alignSelf: "center",
-    marginBottom: "10em",
+  titles: {
+    fontSize: "2em",
+    fontWeight: "bold",
+    color: "#1D2C40",
   },
-  spacing: {
-    width: "20%",
-  },
-  impactWord: {
-    fontSize: "3em",
-    color: "#EB5E28",
-    marginBottom: "0.5em",
-  },
-  phaseTop: {
-    fontSize: "1.5em",
-    color: "#FFFCF2",
-  },
-  phase: {
-    marginBottom: "1em",
-    fontSize: "1.5em",
-    color: "#FFFCF2",
-  },
-  textAlign: {
+  model: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-end",
-    marginTop: "5em",
+    alignItems: "center",
   },
-  text: {
-    alignSelf: "center",
-    marginLeft: "10em",
+  hLine: {
+    border: "none",
+    height: "15vh",
+    width: "1px",
+    backgroundColor: "#c9c0c6",
+    marginRight: "1em",
+    marginLeft: "1em",
   },
-  buttom: {
+  card: {
     display: "flex",
-    backgroundColor: "#EB5E28",
-    borderRadius: "50px",
-    color: "#FFFCF2",
-    fontSize: "1em",
-    width: "70%",
-    height: "6vh",
-    transition: "0.4s",
-    "&:hover": {
-      backgroundColor: "#EB5E28",
-      transition: "0.4s",
-    },
+    flexDirection: "column",
+    width: "40%",
+    marginTop: "1em",
+    backgroundColor: "#FFFFFF",
+    marginBottom: "25px",
+  },
+  container: {
+    textAlign: "center",
+    padding: "10px 20px",
+  },
+  infos: {
+    display: "flex",
+    flexDirection: "row",
+    marginLeft: "3em",
+  },
+  data: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  boldBig: {
+    fontSize: "1.2em",
+    fontWeight: "bold",
+    marginTop: "1em",
+  },
+  cards: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  carModel: {
+    fontSize: "1.5em",
+    fontWeight: "bold",
+    color: "#1D2C40",
+  },
+  spacing: {
+    width: "1%",
   },
 });
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-const imagesVector = [
-  {
-    imgPath: Lambor1,
-  },
-  {
-    imgPath: Lambor2,
-  },
-  {
-    imgPath: Lambor3,
-  },
-  {
-    imgPath: Lambor4,
-  },
-];
-
-export default function ModelsArea() {
+export default function FirstBackGrourndImage() {
   const classes = Style();
-  const [state, setState] = useState(0);
-  const { activeStep } = state;
-
-  const handleStepChange = (activeStep) => {
-    setState({ activeStep });
-  };
 
   return (
     <Box className={classes.all}>
-      <Box className={classes.boxArea}>
-        <AutoPlaySwipeableViews
-          className={classes.slidesArea}
-          axis={Style.direction === "rtl" ? "x-reverse" : "x"}
-          index={activeStep}
-          onChangeIndex={handleStepChange}
-          enableMouseEvents
-        >
-          {imagesVector.map((step, index) => (
-            <div key={step.label}>
-              {Math.abs(activeStep - index) <= 2 ? (
-                <img
-                  alt="Lamborghini"
-                  className={classes.img}
-                  src={step.imgPath}
-                />
-              ) : null}
+      <div className={classes.model}>
+        <p className={classes.titles}>TESLA</p>
+        <div className={classes.cards}>
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla x"
+              src={TeslaModelX}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>MODELO X</p>
+              <div className={classes.infos}>
+                <p className={classes.data}>
+                  <AirlineSeatReclineNormalIcon />
+                  <p>7 Lugares</p>
+                </p>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <StarIcon />
+                  <p>5 estrelas em segurança</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>351 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
             </div>
-          ))}
-        </AutoPlaySwipeableViews>
-        <div className={classes.spacing}></div>
-        <Box className={classes.textBox}>
-          <Box className={classes.text}>
-            {" "}
-            <div className={classes.textAlign}>
-              <div className={classes.impactWord}>Nossos Produtos</div>
-              <div className={classes.phaseTop}>Tecnologia </div>
-              <div className={classes.phaseTop}>Poder </div>
-              <div className={classes.phaseTop}>Inovação </div>
-              <div className={classes.phase}>E Liberdade</div>
-              <Button className={classes.buttom}>SAIBA MAIS</Button>
+          </div>
+          <div className={classes.spacing} />
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla S"
+              src={TeslaModelS}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>MODELO S</p>
+              <div className={classes.infos}>
+                <p className={classes.data}>
+                  <AccessTimeIcon />
+                  <p>100 km em 2.3s</p>
+                </p>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <AdjustIcon />
+                  <p>Proteção de alto impacto</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>402 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
             </div>
-          </Box>
-        </Box>
-      </Box>
+          </div>
+          <div className={classes.spacing} />
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla 3"
+              src={TeslaModel3}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>MODELO 3</p>
+              <div className={classes.infos}>
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>AWD</div>
+                  <p> Motor Duplo</p>
+                </div>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <AccessTimeIcon />
+                  <p>100 km em 3.2s</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>322 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={classes.model}>
+        <p className={classes.titles}>AUDI</p>
+        <div className={classes.cards}>
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla x"
+              src={AudiA3}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>A3</p>
+              <div className={classes.infos}>
+                <p className={classes.data}>
+                  <AirlineSeatReclineNormalIcon />
+                  <p>7 Lugares</p>
+                </p>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <StarIcon />
+                  <p>5 estrelas em segurança</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>351 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.spacing} />
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla S"
+              src={AudiA4}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>A4</p>
+              <div className={classes.infos}>
+                <p className={classes.data}>
+                  <AccessTimeIcon />
+                  <p>100 km em 2.3s</p>
+                </p>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <AdjustIcon />
+                  <p>Proteção de alto impacto</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>402 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.spacing} />
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla 3"
+              src={AudiA7}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>A7</p>
+              <div className={classes.infos}>
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>AWD</div>
+                  <p> Motor Duplo</p>
+                </div>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <AccessTimeIcon />
+                  <p>100 km em 3.2s</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>322 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.spacing} />
+        </div>
+      </div>
+      <div className={classes.model}>
+        <p className={classes.titles}>BMW</p>
+        <div className={classes.cards}>
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla x"
+              src={BMW530}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>530e</p>
+              <div className={classes.infos}>
+                <p className={classes.data}>
+                  <AirlineSeatReclineNormalIcon />
+                  <p>7 Lugares</p>
+                </p>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <StarIcon />
+                  <p>5 estrelas em segurança</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>351 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.spacing} />
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla S"
+              src={BMWHibri}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>Hibrida</p>
+              <div className={classes.infos}>
+                <p className={classes.data}>
+                  <AccessTimeIcon />
+                  <p>100 km em 2.3s</p>
+                </p>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <AdjustIcon />
+                  <p>Proteção de alto impacto</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>402 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={classes.spacing} />
+          <div className={classes.card}>
+            <img
+              style={{ width: "100%", height: "33vh" }}
+              alt="Tesla 3"
+              src={BMWM2}
+            ></img>
+            <div className={classes.container}>
+              <p className={classes.carModel}>M2 Competition</p>
+              <div className={classes.infos}>
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>AWD</div>
+                  <p> Motor Duplo</p>
+                </div>
+                <div className={classes.hLine} />
+                <p className={classes.data}>
+                  <AccessTimeIcon />
+                  <p>100 km em 3.2s</p>
+                </p>
+                <div className={classes.hLine} />
+                <div className={classes.data}>
+                  <div className={classes.boldBig}>322 mil</div>
+                  <p> Cavalos de potencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </Box>
   );
 }
